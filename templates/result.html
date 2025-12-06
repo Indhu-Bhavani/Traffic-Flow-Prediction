@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Predicted Traffic Condition</h1>
+        <p><strong>Traffic Condition:</strong><b style="color: blueviolet;"> {{ traffic_condition }}</b></p>
+        <p><strong>Total Vehicles:</strong> {{ total_vehicles }}</p>
+        <p><strong>Vehicle Density:</strong> {{ vehicle_density }}</p>
+        <p><strong>Severity Level:</strong> {{ severity }}</p>
+        <p><strong>City:</strong> {{ city }}</p>
+
+        
+        <a href="/" class="back-button">Go Back</a>
+    </div>
+</body>
+</html>

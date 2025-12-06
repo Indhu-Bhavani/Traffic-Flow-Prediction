@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Traffic Flow Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Traffic Flow Prediction</h1>
+        <form action="/predict" method="post">
+            <label>Frame (Time period in minutes):</label>
+            <input type="number" name="frame" required>
+            <label>Car Count:</label>
+            <input type="number" name="car_count" required>
+            <label>Truck Count:</label>
+            <input type="number" name="truck_count" required>
+            <label>Bike Count:</label>
+            <input type="number" name="bike_count" required>
+            <label>Bus Count:</label>
+            <input type="number" name="bus_count" required>
+            <label>Other Vehicles Count:</label>
+            <input type="number" name="other_vehicle_count" required>
+            <label>City:</label>
+            <select name="city">{% for city in cities %}<option value="{{ city }}">{{ city }}</option>{% endfor %}</select>
+            <label>Weather Condition:</label>
+            <select name="weather_condition">
+                <option value="" disabled selected>Select weather condition</option>
+                <option value="Clear">Clear</option>
+                <option value="Rainy">Rainy</option>
+                <option value="Snowy">Snowy</option>
+                <option value="Foggy">Foggy</option>
+            </select>
+            <label>Time of Day:</label>
+            <select name="time_of_day">
+                <option value="" disabled selected>Select Time of Day</option>
+                <option value="Morning">Morning</option>
+                <option value="Afternoon">Afternoon</option>
+                <option value="Evening">Evening</option>
+                <option value="Night">Night</option>
+            </select>
+            <label>Day of the Week:</label>
+            <select name="day_of_week">
+                <option value="" disabled selected>Select Day of the Week</option>
+                <option value="Monday">Monday</option>
+                <option value="Tuesday">Tuesday</option>
+                <option value="Wednesday">Wednesday</option>
+                <option value="Thursday">Thursday</option>
+                <option value="Friday">Friday</option>
+                <option value="Saturday">Saturday</option>
+                <option value="Sunday">Sunday</option>
+            </select>
+            <button type="submit">Predict Traffic Condition</button>
+        </form>
+    </div>
+</body>
+</html>
+
